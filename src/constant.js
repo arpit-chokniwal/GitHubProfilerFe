@@ -1,3 +1,3 @@
-const GITHUB_BASE_URL = "baseApi/api/v1/githubDetail"
+const GITHUB_BASE_URL = ""
 
 export { GITHUB_BASE_URL }

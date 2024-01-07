@@ -1,7 +1,7 @@
+import GithubUserDetailPage from "../components/GithubUserDetailPage.js"
 
 const UserGithubProfiler = () => {
-    return (<>
-    </>)
+    return (<GithubUserDetailPage />)
 }
 
 export default UserGithubProfiler

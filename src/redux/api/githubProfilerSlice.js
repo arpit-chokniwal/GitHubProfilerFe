@@ -10,7 +10,7 @@ export const githubProfilerAPI = createApi({
 
     endpoints: (builder) => ({
         getGithubUserDetail: builder.query({
-            query: ({ githubUserId }) => ({
+            query: (githubUserId) => ({
                 url: `/${githubUserId}`,
                 method: "GET"
             })
