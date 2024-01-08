@@ -27,6 +27,7 @@ const GithubUserDetailPage = () => {
     const [reposPerLanguage, setReposPerLanguage] = useState({});
     const [commitsPerLanguage, setCommitsPerLanguage] = useState({});
 
+
     const [
         getGitUser,
         {
@@ -38,11 +39,14 @@ const GithubUserDetailPage = () => {
     ] = useLazyGetGithubUserDetailQuery();
 
     useEffect(() => {
-        if (!searchQuery || searchQuery.length > 0 === 0) {
-            navigation("/");
+        if (!searchQuery || searchQuery?.length === 0) {
+            navigation("/search");
         } else {
             getGitUser(searchQuery);
         }
+    }, []);
+
+    useEffect(() => {
         if (gitUserError) {
             navigation(`/search?search_query=${searchQuery}&error=not_found`);
         }
@@ -62,7 +66,7 @@ const GithubUserDetailPage = () => {
             setLanguagePercentages(gitUserData.details.languagePercentages);
             setCommitsPerLanguage(gitUserData.details.commitsPerLanguage);
         }
-    }, [getGitUser, navigation, searchQuery, gitUserError, gitUserSuccess]);
+    }, [gitUserError, gitUserSuccess, gitUserData, searchQuery, navigation]);
 
     const UserDetailItem = ({ icon: Icon, label, value, isLink }) => {
         return value ? (
