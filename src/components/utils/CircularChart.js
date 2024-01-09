@@ -1,7 +1,7 @@
 import React from 'react';
 import { Doughnut } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import { getColors } from '../utils/helperFunction';
+import { getColors } from '../../utils/helperFunction';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -16,7 +16,7 @@ const DoughnutChart = ({ data }) => {
         labels: allLabels,
         datasets: [
             {
-                label: 'Technologies',
+                label: 'Contribution',
                 data: allValues,
                 backgroundColor: chartColors,
                 borderWidth: 1,

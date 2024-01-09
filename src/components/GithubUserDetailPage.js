@@ -11,8 +11,8 @@ import {
     User,
 } from "@phosphor-icons/react";
 import moment from "moment";
-import MyLineChart from "./Chart";
-import DoughnutChart from "./CircularChart";
+import MyLineChart from "./utils/Chart";
+import DoughnutChart from "./utils/CircularChart";
 
 const GithubUserDetailPage = () => {
     const location = useLocation();
